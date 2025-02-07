@@ -22,9 +22,12 @@ for path in glob.glob(config.root_dir+"/**/*", recursive=True):
     for element in location_elements:
         match element:
             case '04_STEMS':
-                file_type = "Stems"
+                file_type = "stems"
             case 'CUES FOR PREVIEW':
                 file_type = "cue for preview"
+            case _:
+                file_type = "unknown filetype"
+
 
     # Voeg toe aan lijst 
     fileList.append(
