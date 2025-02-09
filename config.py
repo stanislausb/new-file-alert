@@ -1,3 +1,2 @@
 root_dir = ""
-webhook_url = { "HOR" : "",
-                "SKI" : ""}
+webhook_url = {"HOR": "", "SKI": ""}
