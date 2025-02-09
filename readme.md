@@ -1,6 +1,6 @@
 # NEW FILE ALERT IN GOOGLE CHAT
 
-A script that gives an alert in different Google Workspaces when certain new files have been uploaded. 
+This program, when ran, gives an alert in different Google Workspaces when certain new files have been uploaded to the central DropBox repository. 
 
 Script is to be triggered every couple of minutes by an external program.
 
