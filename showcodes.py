@@ -1,4 +1,4 @@
-showcodes = {
+code = {
     'HOR' : 'Horton',
     'SKI' : 'Super Kitties Interstitials'
 }

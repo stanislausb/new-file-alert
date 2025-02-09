@@ -2,32 +2,33 @@ import config
 import json
 import requests
 import model
+import showcodes
 
 def post_alert(alert):
-    project = alert.project
-    url = config.webhook_url[project]
-    print("===========URL=============")
-    print(url)
-    print("\n\n\n\n")
+    showcode = alert.showcode
+    project = showcodes.code[showcode]
+    url = config.webhook_url[showcode]
+
     payload = (
         '{ "text":"'
-        +'New '
+        +'🚨 New '
         + alert.file_type
         +' have been uploaded for '
-        + alert.project +' - Episode ' + alert.episode
-        + '"}'
+        + project +' - Episode ' + alert.episode
+        + ', cue number '
+        + alert.cue_nr + ' 🚨"}'
     )
-    #       New stems have been uploaded for Horton - Episode 119
-    print("=======PAYLOAD========")
+
     print(payload)
-    print("\n\n\n\n")
+    #       New stems have been uploaded for Horton - Episode 119, cue number 1M02
+    
+    
     response = requests.post(
         url=url,
         json=json.loads(payload),
         headers={"Content-Type": "application/json"}
     )
     print(response)
-
 if __name__ == "__main__":
     alert = model.fileName(
         project     = "HOR",

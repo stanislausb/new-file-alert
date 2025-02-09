@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 @dataclass
 class fileName:
-    project     :   str
+    showcode    :   str
     episode     :   str
     cue_nr      :   str
     file_type   :   str
