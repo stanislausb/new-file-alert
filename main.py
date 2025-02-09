@@ -28,7 +28,6 @@ for path in glob.glob(config.root_dir+"/**/*", recursive=True):
             case _:
                 file_type = "unknown filetype"
 
-
     # Voeg toe aan lijst 
     fileList.append(
         model.fileName(
