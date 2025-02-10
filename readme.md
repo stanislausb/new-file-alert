@@ -27,3 +27,5 @@ Script is to be triggered every couple of minutes by an external program.
 - Make a central storage for showcode translations and webhook URL's ==> DB?
 - Optimize performance
 - Interface for configuring parameters
+- Build regex into glob search 
+- Streaming from file instead of loading to memory
