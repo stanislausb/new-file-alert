@@ -14,7 +14,6 @@ for path in glob.glob(config.root_dir + "./01*/**/*.*", recursive=True):
     # Check of bestand al bekend is
     try:
         if history.exists(path):
-            history.exists(path)
             continue
     except:
         print("No history found, creating new one...")
