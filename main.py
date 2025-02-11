@@ -5,6 +5,7 @@ import history
 import config
 import google_api
 import showcodes
+import time
 
 fileList = []
 
@@ -71,5 +72,6 @@ for file in fileList:
 
 # Verstuur alerts via google api
 for alert in alerts:
+    time.sleep(1)
     google_api.post_alert(alert)
     
