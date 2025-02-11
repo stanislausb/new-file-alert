@@ -3,16 +3,17 @@ import glob
 import model
 import history
 import config
-import google_api
+#import google_api
 import showcodes
 
 fileList = []
 
-for path in glob.glob(config.root_dir + "/**/*.*", recursive=True):
-
+for path in glob.glob(config.root_dir + "./01*/**/*.*", recursive=True):
+    print(path)
     # Check of bestand al bekend is
     try:
-        if path in history.getList():
+        if history.exists(path):
+            history.exists(path)
             continue
     except:
         print("No history found, creating new one...")
@@ -70,4 +71,5 @@ for file in fileList:
 
 # Verstuur alerts via google api
 for alert in alerts:
-    google_api.post_alert(alert)
+    #google_api.post_alert(alert)
+    print(alert)

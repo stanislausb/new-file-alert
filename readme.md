@@ -17,9 +17,11 @@ Script is to be triggered every couple of minutes by an external program.
 
 ## Set up your Google Spaces and showcodes
 
-- In `config.py`, add your webhook URL to the corresponding showcode (given that every showcode has their own Space
+- Make a file called `config.py`
+    - Make a variable called `root_dir` and fill in the root directory of where your search can start
+    - Make a dictionary called `webhook_url` with as key the showcode and value the URL for your webhook
 - In `showcodes.py`, add the translations for all showcodes
-- Make sure both lists are the same
+- Make sure the showcodes in both files match
 
 
 ## TODO
@@ -27,5 +29,5 @@ Script is to be triggered every couple of minutes by an external program.
 - Make a central storage for showcode translations and webhook URL's ==> DB?
 - Optimize performance
 - Interface for configuring parameters
-- Build regex into glob search 
-- Streaming from file instead of loading to memory
+- ✔️Build regex into glob search 
+- ✔️Streaming from file instead of loading to memory

@@ -7,6 +7,11 @@ def add(path):
         f.write(path + "\n")
 
 
-def getList():
-    with open(config.root_dir + os.path.sep + ".history") as f:
-        return [line.rstrip("\n") for line in f]
+def exists(path):
+    with open(config.root_dir + os.path.sep + ".history", 'r') as f:
+        for line in f:
+            if path in line:
+                return True
+            else:
+                return False
+
