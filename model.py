@@ -7,3 +7,4 @@ class fileName:
     episode: str
     cue_nr: str
     file_type: str
+    filePath: str

@@ -3,13 +3,13 @@ import glob
 import model
 import history
 import config
-#import google_api
+import google_api
 import showcodes
 
 fileList = []
 
 for path in glob.glob(config.root_dir + "./01*/**/*.*", recursive=True):
-    print(path)
+
     # Check of bestand al bekend is
     try:
         if history.exists(path):
@@ -26,8 +26,8 @@ for path in glob.glob(config.root_dir + "./01*/**/*.*", recursive=True):
     try:
         filename_elements = filename.split("_")
         location_elements = os.path.normpath(location).split(os.path.sep)
-        print("Filename Elements: ", filename_elements)
-        print("Location Elements: ", location_elements)
+        #print("Filename Elements: ", filename_elements)
+        #print("Location Elements: ", location_elements)
 
         # Check of "01" ergens in de path zit (actief project), en check of de showcode bekend is
         if (
@@ -55,13 +55,13 @@ for path in glob.glob(config.root_dir + "./01*/**/*.*", recursive=True):
                 episode=filename_elements[1],
                 cue_nr=filename_elements[2],
                 file_type=file_type,
+                filePath=path
             )
         )
     except:
         print("File not elligable for alert: " + filename)
 
 
-print("File List: ", fileList)
 # Maak alerts aan
 alerts = []
 for file in fileList:
@@ -71,5 +71,5 @@ for file in fileList:
 
 # Verstuur alerts via google api
 for alert in alerts:
-    #google_api.post_alert(alert)
-    print(alert)
+    google_api.post_alert(alert)
+    

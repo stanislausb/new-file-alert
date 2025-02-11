@@ -23,13 +23,15 @@ def post_alert(alert):
         + ' 🚨"}'
     )
 
-    print(payload)
     #      🚨 New stems have been uploaded for Horton - Episode 119, cue number 1M02 🚨
 
     response = requests.post(
         url=url, json=json.loads(payload), headers={"Content-Type": "application/json"}
     )
-    print(response)
+    if response.status_code == '200':
+        print("Alert sent")
+    else:
+        print("Something went wrong sending alert for: ", alert.filePath, "\n", response)
 
 
 if __name__ == "__main__":
