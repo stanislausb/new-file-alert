@@ -2,7 +2,7 @@
 
 This program, when ran, gives an alert in different Google Workspaces when certain new files have been uploaded to the central repository (locally stored). 
 
-Script is to be triggered every couple of minutes by an external program.
+Script is to be triggered periodicaly by an external program.
 
 
 ## Features
@@ -38,7 +38,8 @@ Script is to be triggered every couple of minutes by an external program.
   ```
 - Make sure the showcodes in both files match
 
-
+## Run the program
+`python ./main.py`
 ## TODO
 
 - Make a central storage for showcode translations and webhook URL's ==> DB?
