@@ -1,6 +1,6 @@
-# NEW FILE ALERT IN GOOGLE CHAT
+# NEW FILE ALERT IN GOOGLE CHAT 🚨
 
-This program, when ran, gives an alert in different Google Workspaces when certain new files have been uploaded to the central DropBox repository. 
+This program, when ran, gives an alert in different Google Workspaces when certain new files have been uploaded to the central repository (locally stored). 
 
 Script is to be triggered every couple of minutes by an external program.
 
@@ -19,8 +19,22 @@ Script is to be triggered every couple of minutes by an external program.
 
 - Make a file called `config.py`
     - Make a variable called `root_dir` and fill in the root directory of where your search can start
-    - Make a dictionary called `webhook_url` with as key the showcode and value the URL for your webhook
+    - Make a dictionary called `webhook_url` with as key the showcode and value the URL for your webhook like the following:
+        ```python
+        {
+              'FOO':'http://webhookurl.com/FOO',
+              'BAZ':'http://webhookurl.com/BAZ',
+              'QUX': 'http://webhookurl.com/QUX'
+        }
+      ```
 - In `showcodes.py`, add the translations for all showcodes
+  ```python
+  {
+      'FOO':'Foo Bar'
+      'BAZ':'Baz Buz'
+      'QUX':'Qux Quux'
+  }
+  ```
 - Make sure the showcodes in both files match
 
 
