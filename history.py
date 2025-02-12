@@ -1,4 +1,5 @@
 import os
+import glob
 import config
 
 
@@ -15,3 +16,10 @@ def exists(path):
             else:
                 return False
 
+def  fillHistory():
+    for path in glob.glob(config.root_dir + "./01*/**/*.*", recursive=True):
+        add(path)
+
+
+if __name__ == "__main__":
+    fillHistory()

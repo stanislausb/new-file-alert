@@ -16,7 +16,10 @@ for path in glob.glob(config.root_dir + "./01*/**/*.*", recursive=True):
         if history.exists(path):
             continue
     except:
-        print("No history found, creating new one...")
+        print("No history found, creating new one..............\n")
+        history.fillHistory()
+        print("\nDone! Please run the script again to start polling for new files.")
+        break
 
     # Voeg toe aan historie
     history.add(path)
@@ -29,15 +32,11 @@ for path in glob.glob(config.root_dir + "./01*/**/*.*", recursive=True):
         #print("Filename Elements: ", filename_elements)
         #print("Location Elements: ", location_elements)
 
-        # Check of "01" ergens in de path zit (actief project), en check of de showcode bekend is
-        if (
-            not (any("01" in element for element in location_elements))
-            or filename_elements[0] not in showcodes.code.keys()
-        ):
+        # Check of showcode bekend is
+        if filename_elements[0] not in showcodes.code.keys():
             continue
 
         # Type bestand bepalen
-        print("Nu in bestandsbepaling")
         for element in location_elements:
             match element:
                 case "04_STEMS":
@@ -58,6 +57,7 @@ for path in glob.glob(config.root_dir + "./01*/**/*.*", recursive=True):
                 filePath=path
             )
         )
+        print("Added file to alert list: " + filename)
     except:
         print("File not elligable for alert: " + filename)
 

@@ -18,18 +18,18 @@ def post_alert(alert):
         + project
         + " - Episode "
         + alert.episode
-        + ", cue number "
+        + ", cue "
         + alert.cue_nr
         + ' 🚨"}'
     )
 
-    #      🚨 New stems have been uploaded for Horton - Episode 119, cue number 1M02 🚨
+    #      🚨 New stems have been uploaded for Horton - Episode 119, cue 1M02 🚨
 
     response = requests.post(
         url=url, json=json.loads(payload), headers={"Content-Type": "application/json"}
     )
     if response.status_code == '200':
-        print("Alert sent")
+        print(f"Alert sent for: {project}-{alert.episode}-{alert.cue_nr} ({alert.file_type})" )
     else:
         print("Something went wrong sending alert for: ", alert.filePath, "\n", response)
 
