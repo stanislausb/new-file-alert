@@ -19,14 +19,15 @@ Script is to be triggered every couple of minutes by an external program.
 
 - Make a file called `config.py`
     - Make a variable called `root_dir` and fill in the root directory of where your search can start
-    - Make a dictionary called `webhook_url` with as key the showcode and value the URL for your webhook like the following:
-        ```python
-        {
-              'FOO':'http://webhookurl.com/FOO',
-              'BAZ':'http://webhookurl.com/BAZ',
-              'QUX': 'http://webhookurl.com/QUX'
-        }
-      ```
+    - Make a dictionary called `webhook_url` with as key the showcode and value the URL for your webhook
+   ```python
+   root_dir="PATH\TO\MY\SHARE"
+   webhook_url = {
+       'FOO':'http://webhookurl.com/FOO',
+       'BAZ':'http://webhookurl.com/BAZ',
+       'QUX': 'http://webhookurl.com/QUX'
+   }
+   ```
 - In `showcodes.py`, add the translations for all showcodes
   ```python
   {
